@@ -12,6 +12,8 @@ $URLS = array(
     '/usuarios/usuarios-crear.php' => 'USER_DEL',
     '/usuarios/test-access.php' => 'USER-TEST',
 );
+$APP_PATH = "/usuarios/";
+
 
 function get_path_code($url) {
     global $URLS;
@@ -22,7 +24,6 @@ function get_path_code($url) {
     else {
         return 'NO_CODE';
     }
-    
 }
 
 function get_file_code() {

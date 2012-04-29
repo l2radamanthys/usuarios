@@ -1,0 +1,6 @@
+<br /><br /><br />
+<div align="center">
+	<div class="msj-ok">
+		<p>Login Correcto <a href="panel.php">Acceder al Panel</a></p>
+	</div>
+</div>

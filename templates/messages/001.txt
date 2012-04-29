@@ -1,0 +1,6 @@
+<br /><br /><br />
+<div align="center">
+	<div class="msj-alert">
+		<p>Error, ya te encuentras logueado... <a href="logout.php">Cambiar de usuario.</a></p>
+	</div>
+</div>

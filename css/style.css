@@ -72,3 +72,33 @@ body {
 	width: 600px;
 
 }
+
+
+.msj-ok, .msj-alert, .msj-error {
+	font-size: 12px;
+	text-align: left;
+	width: 400px;
+	padding: 15px;
+	padding-left: 40px;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.msj-ok {
+	border: 1px solid #008000;
+	background-image: url('../images/ok-icon.png');
+}
+
+.msj-alert {
+	border: 1px solid #D96C00;
+	background-image: url('../images/alert-icon.png');
+}
+
+.msj-error {
+	border: 1px solid #FF0000;
+	background-image: url('../images/error-icon.png');
+}

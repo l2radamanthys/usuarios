@@ -1,0 +1,5 @@
+referencia tipos mensajes segun su numero
+
+001 - ya estas logueado
+002 - no te encuentras logueado
+003 - login correcto

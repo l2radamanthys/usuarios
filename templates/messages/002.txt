@@ -1,0 +1,6 @@
+<br /><br /><br />
+<div align="center">
+	<div class="msj-alert">
+		<p>No te encuentras logueado, por lo que no puedes acceder al sistema, <a href="login.php">Login/Ingresar</a></p>
+	</div>
+</div>

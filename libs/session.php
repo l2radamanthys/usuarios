@@ -20,12 +20,12 @@ class Session {
 		 * 
 		 * @return integer: 0 - error usuario/contraseña / 1 - login correcto / 2 - ya se encuentra logueado		
 		 */ 
-		if (isset($_SESSION['usuario'])) {
-			/* en caso de sea el mismo usuario logueado */
-			if ($_SESSION['usuario'] == $user) {
-				return 2;
-			}
-		}
+		//if (isset($_SESSION['usuario'])) {
+		//	/* en caso de sea el mismo usuario logueado */
+		//	if ($_SESSION['usuario'] == $user) {
+		//		return 2;
+		//	}
+		//}
 		
 		if ($user != NULL && $pswd != NULL) {
 			//$user = stripslashes($user);
@@ -56,6 +56,7 @@ class Session {
         }
         
         $conn = db_connect();
+        
 		//$query = "SELECT Users.username, App.name, App.code FROM Users INNER JOIN (Groups INNER JOIN (Applications AS "; 
         $query = "SELECT COUNT(*) FROM Users INNER JOIN (Groups INNER JOIN (Applications AS "; 
 		$query .= "App INNER JOIN AplicationsForGroups AS AppGroup ON App.id = AppGroup.Applications_id) ON "; 
