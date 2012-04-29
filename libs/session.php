@@ -35,7 +35,7 @@ class Session {
             
             $conn = db_connect();
             $query = "SELECT * FROM Users WHERE username='$user' AND password='$pswd'";
-            $result = mysql_query($query, $cursor);
+            $result = mysql_query($query, $conn);
             $count = mysql_num_rows($result);
             if ($count == 1) {
 				$reg = mysql_fetch_assoc($result);
@@ -50,15 +50,25 @@ class Session {
 	
 	
 	function validate_access($user, $app_code) {
-		
-		
-		$query = "SELECT Users.username, App.name, App.code FROM Users INNER JOIN (Groups INNER JOIN (Applications AS"; 
-		$query += "App INNER JOIN AplicationsForGroups AS AppGroup ON App.id = AppGroup.Applications_id) ON"; 
-		$query += "Groups.id = AppGroup.groups_id) ON Groups.id = Users.groups_id WHERE Users.username = '".$user."' AND App.code = '".$app_code."'";
-		
-		echo $query;
-		
-		return False;
+        //entrara aqui cuando a la aplicacion no se le haya definido un codigo de seguridad para permisos
+        if ($app_code == 'NO_CODE') {
+            return True;
+        }
+        
+        $conn = db_connect();
+		//$query = "SELECT Users.username, App.name, App.code FROM Users INNER JOIN (Groups INNER JOIN (Applications AS "; 
+        $query = "SELECT COUNT(*) FROM Users INNER JOIN (Groups INNER JOIN (Applications AS "; 
+		$query .= "App INNER JOIN AplicationsForGroups AS AppGroup ON App.id = AppGroup.Applications_id) ON "; 
+		$query .= "Groups.id = AppGroup.groups_id) ON Groups.id = Users.groups_id WHERE Users.username = '".$user."' AND App.code = '".$app_code."'";        
+        
+        $result = mysql_query($query, $conn) or die("Error ".$query." <br/><br/> MySQL dice: ".mysql_error());
+        $count = mysql_result($result, 0); 
+        if ($count == 1) {
+            return True;
+        }
+        else {
+            return False;
+        }
 	}
 	
 	
@@ -70,3 +80,4 @@ class Session {
         $_SESSION = array();
         session_destroy();
     }
+}

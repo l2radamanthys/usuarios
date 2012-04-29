@@ -11,8 +11,8 @@ USE `usuarios`;
 CREATE  TABLE IF NOT EXISTS `Groups` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(45) NULL ,
-  PRIMARY KEY (`id`) )
-ENGINE = InnoDB;
+  PRIMARY KEY (`id`) 
+)ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -28,10 +28,10 @@ CREATE  TABLE IF NOT EXISTS `Users` (
   `email` VARCHAR(60) NULL ,
   `Groups_id` INT NOT NULL ,
   PRIMARY KEY (`id`) ,
-  INDEX `index_username` (`username` ASC)
+  INDEX `index_username` (`username` ASC),
   INDEX `fk_Users_Groups` (`Groups_id` ASC),
-  CONSTRAINT `fk_Users_Groups` FOREIGN KEY (`Groups_id`) REFERENCES `Groups`(`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  CONSTRAINT `fk_Users_Groups` FOREIGN KEY (`Groups_id`) REFERENCES `Groups`(`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+)ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -42,8 +42,8 @@ CREATE  TABLE IF NOT EXISTS `Applications` (
   `name` VARCHAR(45) NULL ,
   `code` VARCHAR(45) NULL ,
   `descripcion` TEXT NULL ,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+  PRIMARY KEY (`id`)
+)ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -57,8 +57,8 @@ CREATE  TABLE IF NOT EXISTS `AplicationsForGroups` (
   INDEX `fk_AplicationsForGroups_Applications1` (`Applications_id` ASC) ,
   INDEX `fk_AplicationsForGroups_Groups1` (`Groups_id` ASC) ,
   CONSTRAINT `fk_AplicationsForGroups_Applications1` FOREIGN KEY (`Applications_id` ) REFERENCES `Applications` (`id` ) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_AplicationsForGroups_Groups1` FOREIGN KEY (`Groups_id` ) REFERENCES `Groups`(`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  CONSTRAINT `fk_AplicationsForGroups_Groups1` FOREIGN KEY (`Groups_id` ) REFERENCES `Groups`(`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+)ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -75,8 +75,8 @@ CREATE  TABLE IF NOT EXISTS `LogEntrys` (
   INDEX `fk_LogEntrys_Users1` (`Users_id` ASC) ,
   INDEX `fk_LogEntrys_Applications1` (`Applications_id` ASC) ,
   CONSTRAINT `fk_LogEntrys_Users1` FOREIGN KEY (`Users_id`) REFERENCES `Users`(`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_LogEntrys_Applications1` FOREIGN KEY (`Applications_id`) REFERENCES `Applications`(`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  CONSTRAINT `fk_LogEntrys_Applications1` FOREIGN KEY (`Applications_id`) REFERENCES `Applications`(`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+)ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
