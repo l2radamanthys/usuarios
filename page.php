@@ -1,5 +1,5 @@
 <?php
-include('template.php');
+include('libs/template.php');
 draw_header("hola");
 ?>
 

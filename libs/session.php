@@ -22,7 +22,7 @@ class Session {
 		 */ 
 		if (isset($_SESSION['usuario'])) {
 			/* en caso de sea el mismo usuario logueado */
-			if ($_SESSION['usuario'] == md5($user)) {
+			if ($_SESSION['usuario'] == $user) {
 				return 2;
 			}
 		}
@@ -33,19 +33,32 @@ class Session {
             //$pswd = stripslashes($pswd);
             $pswd = mysql_real_escape_string($pswd); 
             
-            $conn = db_conect();
+            $conn = db_connect();
             $query = "SELECT * FROM Users WHERE username='$user' AND password='$pswd'";
             $result = mysql_query($query, $cursor);
             $count = mysql_num_rows($result);
             if ($count == 1) {
 				$reg = mysql_fetch_assoc($result);
-                $_SESSION['usuario'] = md5($reg["username"]);
+                $_SESSION['usuario'] = $reg["username"];
                 return 1;
 			}
 			else {
 				return 0;
 			}
 		}
+	}
+	
+	
+	function validate_access($user, $app_code) {
+		
+		
+		$query = "SELECT Users.username, App.name, App.code FROM Users INNER JOIN (Groups INNER JOIN (Applications AS"; 
+		$query += "App INNER JOIN AplicationsForGroups AS AppGroup ON App.id = AppGroup.Applications_id) ON"; 
+		$query += "Groups.id = AppGroup.groups_id) ON Groups.id = Users.groups_id WHERE Users.username = '".$user."' AND App.code = '".$app_code."'";
+		
+		echo $query;
+		
+		return False;
 	}
 	
 	

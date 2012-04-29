@@ -1,7 +1,5 @@
 <?php
 
-
-
 function draw_header($title="Usuarios") {
 	echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"';
 	echo '"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">';
@@ -24,5 +22,15 @@ function draw_footer() {
 	echo '</div>';
 	echo '</body>';
 }
+
+
+function draw_block($file) {
+	$buffer = file($file);
+	foreach($buffer as $line) {
+		echo $line."\n";
+	}
+}
+
+
 
 ?>

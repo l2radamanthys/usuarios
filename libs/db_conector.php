@@ -14,7 +14,7 @@ $NAME = "usuarios"  /* Nombre de la Base de Datos a usar */
 
 
  
-function db_conect() {
+function db_connect() {
 	/*
 	 * Extablece la conecion con la Base de Datos
 	 */

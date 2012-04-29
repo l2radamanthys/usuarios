@@ -65,3 +65,10 @@ body {
 .boton:hover {
 	background-color: #CAE4FF;
 }
+
+.form {
+	background-color: #0080FF;
+	padding: 30px 10px 30px 10px;
+	width: 600px;
+
+}
