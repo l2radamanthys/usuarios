@@ -1,31 +1,28 @@
 <?php
 
+$TEMPLATE_PATH = 'templates/';
+
 function draw_header($title="Usuarios") {
-	drawn_and_assign('templates/header.txt', array('TITLE' => $title));
-	//draw_block('templates/header-sup.txt');
-	//echo '<title>'.$title.'</title>';
-	//draw_block('templates/header-inf.txt');
+	display('header.txt', array('TITLE' => $title));
 }
 
 
 function draw_footer() {
-	draw_block('templates/footer.txt');
+	display('footer.txt');
 }
 
 
 function draw_block($file) {
-	//$buffer = file($file);
-	//foreach($buffer as $line) {
-	//	echo $line."\n";
-	//}
-	$content = file_get_contents($file);
+	global $TEMPLATE_PATH;
+	$content = file_get_contents($TEMPLATE_PATH.$file);
 	echo $content;
 	
 }
 
 
 function drawn_and_assign($file, $dict) {
-	$content = file_get_contents($file);
+	global $TEMPLATE_PATH;
+	$content = file_get_contents($TEMPLATE_PATH.$file);
 	foreach ($dict as $key => $value) {
 		$content = preg_replace('/<#'.$key.'#>/', $value, $content);
 		//echo '/[$'.$key.'$] -> '.$value;
@@ -45,6 +42,41 @@ function display($file, $dict=NULL) {
 		drawn_and_assign($file, $dict);
 	}
 }
+
+
+/*
+ * Formatea un texto para dejar un salida HTML
+ * por ejemplo
+ * 
+ * >> format('hola mundo', 'h1', 'class="title"')
+ * imprimira en el documento:
+ * <h1 class="title">hola mundo</h1>
+ * 
+ */ 
+function format($text="", $key="p", $argv="", $end_tag=True) {
+	if ($end_tag) {
+		$cad = "<".$key." $argv>".$text."</".$key.">\n";
+	}
+	else {
+		$cad = "<".$key." $argv>".$text."\n";
+	}
+	echo $cad;
+}
+
+
+function end_tag($key) {
+	echo "</".$key.">\n";
+}
+
+function br_tag($num=1) {
+	for ($i=1; $i < $num; $i++) {
+		echo '<br />';
+	}
+
+}
+
+//function format_ini($text)
+
 
 
 

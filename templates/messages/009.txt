@@ -1,0 +1,8 @@
+<br /><br /><br />
+<div align="center">
+	<div class="msj-ok">
+		<p>Permisos de los Grupos Actualizados Correctamente...</p>
+	</div>
+	
+	<br />
+</div>

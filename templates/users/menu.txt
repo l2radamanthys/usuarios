@@ -1,0 +1,42 @@
+<div class="menu-cont">
+
+
+<ul id="menu-horizontal"> 
+	<li>Usuarios
+		<ul>
+		<li><a href="usuario-agregar.php">Agregar</a></li>
+		<li><a href="">Modificar</a></li>
+		<li><a href="">Borrar</a></li>
+		</ul>
+	</li>
+	
+	<li>Grupos
+		<ul>
+		<li><a href="grupo-agregar.php">Agregar</a></li>
+		<li><a href="grupo-listado.php">Listado</a></li>
+		<li><a href="">Borrar</a></li>
+		<li><a href="grupo-modificar-permisos.php">Modificar Permisos</a></li>
+		</ul>
+	</li>
+	
+	<li>Permisos
+		<ul>
+		<li><a href="applicaciones-agregar.php">Agregar</a></li>
+		<li><a href="applicaciones-listado.php">Listado</a></li>
+		<li><a href="">Modificar</a></li>
+		<li><a href="">Quitar</a></li>
+		</ul>
+	</li>
+	
+	<li>Cuenta
+		<ul>
+		<li><a href="panel.php">Panel de Usuario</a></li>
+		<li><a href="mostrar-mis-datos.php">Mis Datos</a></li>
+		<!-- <li><a href="modificar-mis-datos.php">Modificar Datos</a></li>  -->
+		<li><a href="login.php">Login</a></li>
+		<li><a href="logout.php">Logout</a></li>
+		</ul>
+	</li>
+</ul>
+</div>
+<br /><br />

@@ -1,0 +1,13 @@
+<br />
+<div class="window" style="width: 400px; margin:0px auto;">
+<h3>Nuevo Grupo</h3>
+<form action="#" method="POST">
+<table  border="0px" style="margin:0px auto;">
+	<tr>
+		<td><label>Nombre:</label></td>
+		<td><input type="text" name="name" class="edt_c" /></td>
+		<td><input type="submit" value="Agregar" class="boton"/></td>
+	</tr>
+</table>
+</form>
+</div>

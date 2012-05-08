@@ -47,6 +47,7 @@ class Session {
 			}
 		}
 	}
+
 	
 	
 	function validate_access($user, $app_code) {

@@ -1,0 +1,11 @@
+			</select>
+		</td>
+
+		<td>
+			<input type="submit" value="Modificar" class="boton"/>
+			<input type="hidden" name="query" value="group" />
+		</td>
+	</tr>
+</table>
+</form>
+</div>

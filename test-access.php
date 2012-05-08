@@ -1,8 +1,9 @@
 <?php
-include('libs/template.php');
 include_once('libs/db_conector.php');
 include_once('libs/session.php');
 include_once('libs/urls.php');
+include_once('libs/template.php');
+
 
 draw_header("Agregar Usuario");
 

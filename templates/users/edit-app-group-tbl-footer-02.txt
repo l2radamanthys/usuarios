@@ -1,0 +1,15 @@
+	<tr>
+		<td colspan="2">
+			<br />
+		</td>
+	</tr>		
+	<tr>
+		<td colspan="2">
+			<input type="submit" value="Modificar" class="boton"/>
+			<input type="hidden" name="query" value="application" />
+			<input type="hidden" name="group_id" value="<#id#>" />
+		</td>
+	</tr>
+</table>
+</form>
+</div>

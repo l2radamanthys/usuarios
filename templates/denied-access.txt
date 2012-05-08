@@ -1,0 +1,8 @@
+<br /><br /><br /><br /><br /><br />
+<div align="center"> 
+	<div class="msj-error">
+		<p>Lo siento pero su usuario no posee permisos suficientes como para acceder a esta Area..</p>
+	</div>
+	<br />
+	<a href="panel.php" class="boton">Volver al Panel</a>
+</div>

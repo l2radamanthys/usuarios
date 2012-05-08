@@ -1,0 +1,8 @@
+<br />
+<div class="window" style="width: 400px; margin:0px auto;">
+<h3>Selecione Grupo</h3>
+
+<form  action="" method="POST">
+<table  border="0px" cellspacing="5px" style="margin:0 auto;">
+		
+		

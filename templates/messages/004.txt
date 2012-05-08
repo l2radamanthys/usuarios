@@ -1,0 +1,8 @@
+<br /><br /><br />
+<div align="center">
+	<div class="msj-error">
+		<p>Eror, usuario o contraseña incorrectos.. </p>
+	</div>
+	<br />
+	<a href="login.php" class="boton"><img src="images/arrow_left_icon.png" align="top">&nbsp;Atras</a>
+</div>

@@ -1,0 +1,40 @@
+<br />
+<div class="window" style="width: 400px; margin:0px auto;">
+<h3>Datos de Usuario</h3>
+<form action="#" method="POST">
+<table  border="0px" style="margin:0px auto;" cellspacing="5px">
+	<tr>
+		<td><label>Nombre Usuario:</label></td>
+		<td><#username#></td>
+	</tr>
+	<!-- <tr>
+		<td><label>Contraseña:</label></td>
+		<td><input type="password" name="password1" class="edt_c" /></td>
+	</tr>
+	<tr>
+		<td><label>Repetir Contraseña:</label></td>
+		<td><input type="password" name="password2" class="edt_c" /></td>
+	</tr>  -->
+	
+	<tr>
+		<td><label>Nombre:</label></td>
+		<td><#first_name#></td>
+	</tr>
+	
+	<tr>
+		<td><label>Apellido:</label></td>
+		<td><#last_name#></td>
+	</tr>
+	
+	<tr>
+		<td><label>Email:</label></td>
+		<td><#email#></td>
+	</tr>
+	
+	<tr>
+		<td><label>Grupo:</label></td>
+		<td><#group#></td>
+	</tr>
+</table>
+</form>
+</div>

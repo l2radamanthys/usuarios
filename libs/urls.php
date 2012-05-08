@@ -6,11 +6,24 @@
 //las mismas deben ser definidas en este dicionario y en la Base de Datos
 $URLS = array(
     //'URL' => 'URL_CODE',
-    '/usuarios/panel.php' => 'LOGIN',
-    '/usuarios/usuarios-modificar.php' => 'USER_EDIT',
+    '/usuarios/panel.php' => 'LOGIN', /**/
+    
+    
+    
     '/usuarios/usuarios-borrar.php' => 'USER_ADD',
+    '/usuarios/usuarios-listado.php' => 'USER_LIST',
+    '/usuarios/usuarios-modificar.php' => 'USER_EDIT', /**/
     '/usuarios/usuarios-crear.php' => 'USER_DEL',
-    '/usuarios/test-access.php' => 'USER-TEST',
+    '/usuarios/test-access.php' => 'USER_TEST',   /**/
+    
+    '/usuarios/application-add.php' => 'APP_ADD',
+    
+    
+    '/usuarios/agregar-grupo.php' => 'GROUP_ADD',
+    '/usuarios/modificar-permisos-grupo.php' => 'GROUP_APP_EDT',
+    
+    
+    
 );
 $APP_PATH = "/usuarios/";
 

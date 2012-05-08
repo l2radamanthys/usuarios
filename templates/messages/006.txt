@@ -1,0 +1,6 @@
+<br /><br /><br />
+<div align="center">
+	<div class="msj-error">
+		<p>Error, el <#key#> con el nombre <strong><#name#></strong> ya existe</p>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+<br />
+<div class="window" style="width: 400px; margin:0px auto;">
+<h3>Agregar Aplicacion</h3>
+
+<form  action="" method="POST">
+<table  border="0px" style="margin:0px auto;">
+	<tr>
+		<td><label>Nombre:</label></td>
+		<td><input type="text" name="name" class="edt_m" /></td>
+	</tr>
+	
+	<tr>
+		<td><label>Codigo:</label></td>
+		<td><input type="text" name="code" class="edt_c" /></td>
+	</tr>
+	
+	<tr>
+		<td><label>Descripcion:</label></td>
+		<td><textarea name="description" class="edt_m"></textarea></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2"><br /></td>
+		
+	</tr>
+	
+	<tr>
+		<td colspan="2" align="center">
+		<input type="submit" value="Agregar" class="boton"/>
+		<input type="reset" value="Limpiar" class="boton"/>
+		</td>
+	</tr>
+</table>
+</form>
+</div>
