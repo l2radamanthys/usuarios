@@ -8,13 +8,19 @@ include_once('libs/template-manager.php');
 include_once('libs/users.php');
 
 $user = new Session();
-html_display('header.txt', 'TITLE', 'Panel de Control');
+html_display('header.txt', 'TITLE', 'Modificar datos de Usuario');
 
-html_format('Usuarios - Panel Control', 'h1', 'style="margin-bottom: 10px"'); //titulo
+html_format('Usuarios - Modificar datos de Usuario', 'h1', 'style="margin-bottom: 10px"'); //titulo
 //html_display('users/menu.txt'); //dibujar menu
 display_menu($user); 
 
+if ($user->is_have_access()) {
+	
+}
 
+else {
+	html_display('messages/010.txt');
+}
 
 html_display('footer.txt');
 ?>

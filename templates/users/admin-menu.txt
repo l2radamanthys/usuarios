@@ -1,13 +1,11 @@
 <div class="menu-cont">
-
-
 <ul id="menu-horizontal"> 
 	<li>Usuarios
 		<ul>
 		<li><a href="usuario-agregar.php">Agregar</a></li>
 		<li><a href="usuario-listado.php">Listado</a></li>
-		<li><a href="">Modificar</a></li>
-		<li><a href="">Borrar</a></li>
+		<li><a href="usuario-modificar.php">Modificar</a></li>
+		<li><a href="usuario-borrar.php">Borrar</a></li>
 		</ul>
 	</li>
 	
@@ -15,8 +13,8 @@
 		<ul>
 		<li><a href="grupo-agregar.php">Agregar</a></li>
 		<li><a href="grupo-listado.php">Listado</a></li>
-		<li><a href="">Borrar</a></li>
 		<li><a href="grupo-modificar-permisos.php">Modificar Permisos</a></li>
+		<li><a href="grupo-borrar.php">Borrar</a></li>
 		</ul>
 	</li>
 	
@@ -24,8 +22,8 @@
 		<ul>
 		<li><a href="applicaciones-agregar.php">Agregar</a></li>
 		<li><a href="applicaciones-listado.php">Listado</a></li>
-		<li><a href="">Modificar</a></li>
-		<li><a href="">Quitar</a></li>
+		<li><a href="applicaciones-modificar.php">Modificar</a></li>
+		<li><a href="applicaciones-borrar.php">Borrar</a></li>
 		</ul>
 	</li>
 	

@@ -2,18 +2,20 @@
 include_once('libs/db_conector.php');
 include_once('libs/session.php');
 include_once('libs/urls.php');
+include_once('libs/config.php');
 include_once('libs/template-manager.php');
 
 include_once('libs/users.php');
 include_once('libs/groups.php');
 
 
+$user = new Session();
 html_display('header.txt', 'TITLE', 'Agregar Usuario');
 html_format("Usuarios", "h1", 'style="margin-bottom: 10px"'); //titulo
-html_display('users/menu.txt'); //dibujar menu
+display_menu($user);  //dibujar menu
 
 
-if (1) {
+if ($user->is_have_access()) {
 	html_display('users/nuevo-usuario-top.txt');
 	
 	$group = new Groups();
@@ -30,17 +32,12 @@ if (1) {
 		$user = new Users();
 		$user->add($_POST['username'], $_POST['password1'], $_POST['first-name'], $_POST['last-name'], $_POST['email'], $_POST['group_id'], 0);
 		
-		echo "Usuario Agregado";
-	
-		
+		html_display('messages/005.txt', array('key'=>'Usuario', 'name'=>$_POST['username']));
 	}
-	
 }
 else {
-	html_display('denied-access.txt');
+	html_display('messages/010.txt');
 }
-
-
 
 html_display('footer.txt');
 ?>

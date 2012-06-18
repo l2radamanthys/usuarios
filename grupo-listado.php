@@ -2,6 +2,7 @@
 include_once('libs/db_conector.php');
 include_once('libs/session.php');
 include_once('libs/urls.php');
+include_once('libs/config.php');
 include_once('libs/template-manager.php');
 
 include_once('libs/groups.php');
@@ -10,7 +11,7 @@ include_once('libs/groups.php');
 html_display('header.txt', 'TITLE', 'Listado de Grupos');
 
 html_format('Usuarios - Grupos', 'h1', 'style="margin-bottom: 10px"'); //titulo
-html_display('users/menu.txt'); //dibujar menu
+display_menu();  //dibujar menu
 
 tbr(2);
 

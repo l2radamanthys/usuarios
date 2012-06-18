@@ -7,8 +7,8 @@
 
 //plantillas de menu dependiendo el tipo de usuario
 $USER_MENU_TPL = array(
-	'default' => 'users/default-menu.txt',
-	'Usuarios' => 'users/users-menu.txt',
+	'default' => 'users/admin-menu.txt',
+	//'Usuarios' => 'users/users-menu.txt',
 	'Admins' => 'users/admin-menu.txt',
 );
 
@@ -20,22 +20,19 @@ $USER_MENU_TPL = array(
  * - users.php
  * - session.php
  * 
- * @param string $group_name nombre del grupo al que pertenece el usuario
+ * 
  * 
  */ 
-function display_menu() {
+function display_menu($user) {
 	global $USER_MENU_TPL;
 		
-	if (isset($_SESSION['usuario'])) {
-		$username = $_SESSION['usuario'];
+	if ($user->login_username() != '') {
+		$username = $user->login_username();
 		
 		$user = new Users();
 		$group = $user->group($username);
-		echo $group['name']."--";
+		//echo $group['name']."--";
 		if (isset($USER_MENU_TPL[$group['name']])) {
-			
-			
-			
 			html_display($USER_MENU_TPL[$group['name']]);
 		}
 		

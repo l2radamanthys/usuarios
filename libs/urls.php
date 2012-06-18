@@ -15,19 +15,22 @@ $URLS = array(
     //'URL' => 'URL_CODE',
     '/usuarios/panel.php' => 'LOGIN', /**/
     
+    '/usuarios/usuario-agregar.php' => 'USER_ADD',
+    '/usuarios/usuario-listado.php' => 'USER_LIST',
+    '/usuarios/usuario-borrar.php' => 'USER_DEL',
+    '/usuarios/usuario-modificar.php' => 'USER_EDIT',
     
     
-    '/usuarios/usuarios-borrar.php' => 'USER_ADD',
-    '/usuarios/usuarios-listado.php' => 'USER_LIST',
-    '/usuarios/usuarios-modificar.php' => 'USER_EDIT', /**/
-    '/usuarios/usuarios-crear.php' => 'USER_DEL',
-    '/usuarios/test-access.php' => 'USER_TEST',   /*para prueba de acceso*/
-    
-    '/usuarios/application-add.php' => 'APP_ADD',
+    '/usuarios/applicaciones-agregar.php' => 'APP_ADD',
+    '/usuarios/applicaciones-listado.php' => 'APP_LIST',
+    '/usuarios/applicaciones-modificar.php' => 'APP_EDIT',
+    '/usuarios/applicaciones-borrar.php' => 'APP_DEL',
     
     
     '/usuarios/agregar-grupo.php' => 'GROUP_ADD',
-    '/usuarios/modificar-permisos-grupo.php' => 'GROUP_APP_EDT',
+    '/usuarios/grupo-modificar-permisos.php' => 'GROUP_APP_EDT',
+    
+    '/usuarios/test-access.php' => 'USER_TEST',   /*para prueba de acceso*/
     
 );
 
@@ -43,6 +46,7 @@ function get_path_code($url) {
     }
     
     else {
+        echo '<p style="color: #D94600">URL APLICACION: '.$url.'</p>';
         return 'NO_CODE';
     }
 }

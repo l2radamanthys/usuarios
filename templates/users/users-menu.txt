@@ -1,0 +1,16 @@
+<div class="menu-cont">
+<ul id="menu-horizontal"> 		
+	<li>Cuenta
+		<ul>
+		<li><a href="panel.php">Panel de Usuario</a></li>
+		<li><a href="mostrar-mis-datos.php">Mis Datos</a></li>
+		<li><a href="modificar-mis-datos.php">Modificar Datos</a></li>
+		<li><a href="login.php">Login</a></li>
+		<li><a href="logout.php">Logout</a></li>
+		<li><a href="page.php">Page</a></li>
+		</ul>
+	</li>
+	
+</ul>
+</div>
+<br /><br />

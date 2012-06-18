@@ -7,7 +7,6 @@ include_once('libs/template-manager.php');
 
 html_display('header.txt', 'TITLE', 'Login');
 html_format("Login", "h1", 'style="margin-bottom: 10px"'); //titulo
-//display('templates/users/menu.txt'); //dibujar menu
 
 $mi_session = new Session();
 
