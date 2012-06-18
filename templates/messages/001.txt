@@ -1,10 +1,12 @@
-<br /><br /><br />
-<div align="center">
-	<div class="msj-alert">
-		<p>Error, ya te encuentras logueado... </p>
+<br /><br /><br /><br />
+<div class="msj-alert-window">
+	<h2>Alerta</h2>
+		
+	<p><strong>Error:</strong> Usted ya se encuentras logueado con el siguiente usuario <spam style="color: #DF4800; font-weight: bold;"><#USER#></spam>.</p>
+	<p>¿Que deseas Hacer? </p>
+		
+	<div>
+		 <a href="logout.php"><img src="images/reload_icon.png" align="top"> Cambiar de Usuario</a>
+		<a href="panel.php">Acceder al Panel <img src="images/arrow_right_icon.png" align="top"></a>
 	</div>
-	
-	<br />
-	<a href="logout.php" class="boton"><img src="images/reload_icon.png" align="top"> Cambiar de Usuario</a>
-	<a href="panel.php" class="boton">Acceder al Panel <img src="images/arrow_right_icon.png" align="top"></a>
 </div>

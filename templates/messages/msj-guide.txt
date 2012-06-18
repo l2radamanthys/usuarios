@@ -7,3 +7,6 @@ referencia tipos mensajes segun su numero
 005 - Agregado [name]
 006 - No se pudo agregar [key] [name]
 007 - logout
+008 -
+009 -
+010 - Acceso no valido, (para seguridad de acceso a las diferentes areas)

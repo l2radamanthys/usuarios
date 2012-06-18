@@ -2,35 +2,45 @@
 include_once('libs/db_conector.php');
 include_once('libs/session.php');
 include_once('libs/urls.php');
-include_once('libs/template.php');
+include_once('libs/template-manager.php');
 
+include_once('libs/users.php');
 include_once('libs/groups.php');
 
 
-draw_header("Agregar Usuarios");
-format("Usuarios", "h1", 'style="margin-bottom: 10px"'); //titulo
-display('users/menu.txt'); //dibujar menu
+html_display('header.txt', 'TITLE', 'Agregar Usuario');
+html_format("Usuarios", "h1", 'style="margin-bottom: 10px"'); //titulo
+html_display('users/menu.txt'); //dibujar menu
 
 
 if (1) {
-	display('users/nuevo-usuario-top.txt');
+	html_display('users/nuevo-usuario-top.txt');
 	
 	$group = new Groups();
 	$result = $group->all();
-	format('','select','name="group_id" class="edt_mc"',False);
+	html_format('','select','name="group_id" class="edt_mc"',False);
 	while ($reg = mysql_fetch_assoc($result)) {
-		format($reg['name'],'option','value="'.$reg['id'].'"');
+		html_format($reg['name'],'option','value="'.$reg['id'].'"');
 	}
-	end_tag('select');
+	tend('select');
+	html_display('users/nuevo-usuario-bottom.txt');
 	
-	display('users/nuevo-usuario-bottom.txt');
+	
+	if (isset($_POST['username'])) {
+		$user = new Users();
+		$user->add($_POST['username'], $_POST['password1'], $_POST['first-name'], $_POST['last-name'], $_POST['email'], $_POST['group_id'], 0);
+		
+		echo "Usuario Agregado";
+	
+		
+	}
+	
 }
 else {
-	display('denied-access.txt');
+	html_display('denied-access.txt');
 }
 
 
 
-
-draw_footer();
+html_display('footer.txt');
 ?>

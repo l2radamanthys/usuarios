@@ -10,16 +10,20 @@
  *  	db_conector.php
  */ 
 
+$DEBUG = True;  //muestra los mensajes para de debug
+
 
 class Session {
+	
+	/* Funcion que loguea un usuario en caso de no estar logueado
+     *
+     * @param string $user: nombre de usuario
+     * @param string $pswd: contrasenia usuario
+	 * 
+	 * @return integer: 0 - error usuario/contraseña / 1 - login correcto / 2 - ya se encuentra logueado		
+	 */ 
 	function login($user, $pswd) {
-        /* Funcion que loguea un usuario en caso de no estar logueado
-         *
-         * @param string $user: nombre de usuario
-         * @param string $pswd: contrasenia usuario
-		 * 
-		 * @return integer: 0 - error usuario/contraseña / 1 - login correcto / 2 - ya se encuentra logueado		
-		 */ 
+        
 		//if (isset($_SESSION['usuario'])) {
 		//	/* en caso de sea el mismo usuario logueado */
 		//	if ($_SESSION['usuario'] == $user) {
@@ -49,28 +53,82 @@ class Session {
 	}
 
 	
+	/*
+	 * Retorna el nombre de usuario del que se encuentra logueado actualmente
+	 * caso contrario retorna una cadena vacia
+	 */ 
+	function login_username() {
+		if (isset($_SESSION['usuario'])) {
+			return $_SESSION['usuario'];
+		}
+		else {
+			return '';
+		}
+	}
 	
-	function validate_access($user, $app_code) {
+	
+	/*
+	 * Permite validar el acceso a una determinada area de un sitio
+	 * 
+	 * @param string $app_code codigo del sitio
+	 * 
+	 * @return int
+	 * 		0 - pagina sin permiso definido
+	 * 		1 - tiene permiso
+	 * 		2 - no logueado
+	 * 		3 - no tiene permiso
+	 */ 
+	function validate_access($app_code) {
         //entrara aqui cuando a la aplicacion no se le haya definido un codigo de seguridad para permisos
         if ($app_code == 'NO_CODE') {
-            return True;
+			global $DEBUG;
+			if ($DEBUG) {
+				echo '<p style="color: #D94600">ALERTA: ESTA PAGINA NO TIENE PERMISOS ASIGNADO</p>';
+			}
+            return 0;
         }
         
-        $conn = db_connect();
-        
-		//$query = "SELECT Users.username, App.name, App.code FROM Users INNER JOIN (Groups INNER JOIN (Applications AS "; 
-        $query = "SELECT COUNT(*) FROM Users INNER JOIN (Groups INNER JOIN (Applications AS "; 
-		$query .= "App INNER JOIN AplicationsForGroups AS AppGroup ON App.id = AppGroup.Applications_id) ON "; 
-		$query .= "Groups.id = AppGroup.groups_id) ON Groups.id = Users.groups_id WHERE Users.username = '".$user."' AND App.code = '".$app_code."'";        
-        
-        $result = mysql_query($query, $conn) or die("Error ".$query." <br/><br/> MySQL dice: ".mysql_error());
-        $count = mysql_result($result, 0); 
-        if ($count == 1) {
-            return True;
-        }
         else {
-            return False;
-        }
+			//si no esta conectado 
+			$user = $this->login_username();
+			if ($user != '') {
+				$query = "SELECT Users.username, App.name, App.code FROM Users INNER JOIN (Groups INNER JOIN (Applications AS App ";
+				$query .= "INNER JOIN AplicationsForGroups AS AppGroup ON App.id = AppGroup.Applications_id) ON Groups.id = AppGroup.groups_id) ON Groups.id = Users.groups_id ";
+				$query .= "WHERE Users.username = '".$user."' AND App.code = '".$app_code."'";
+			
+			
+				$conn = db_connect();
+				$result = mysql_query($query, $conn) or die("Error ".$query." <br/><br/> MySQL dice: ".mysql_error());
+				$count = mysql_result($result, 0); 
+				if ($count == 1) {
+					return 1;
+				}
+				else {
+					return 2;
+				}
+			}
+			else {
+				return 3;
+			}	
+		}
+	}
+	
+	
+	/*
+	 * Permite verificar si el usuario tiene acceso
+	 * 
+	 * @return boolean retorna un valor booleano de si tiene acceso 
+	 * o no al sitio.
+	 */ 
+	function is_have_access() {
+		$app_code = get_path_code($_SERVER['SCRIPT_NAME']);
+		//echo $_SERVER['SCRIPT_NAME'];
+		if ($this->validate_access($app_code) < 2) {
+			return True;
+		}
+		else {
+			return False;
+		}
 	}
 	
 	

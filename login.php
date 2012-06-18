@@ -2,33 +2,37 @@
 include_once('libs/db_conector.php');
 include_once('libs/session.php');
 include_once('libs/urls.php');
-include_once('libs/template.php');
+include_once('libs/template-manager.php');
 
-draw_header("Login");
-format("Login", "h1", 'style="margin-bottom: 10px"'); //titulo
+
+html_display('header.txt', 'TITLE', 'Login');
+html_format("Login", "h1", 'style="margin-bottom: 10px"'); //titulo
 //display('templates/users/menu.txt'); //dibujar menu
 
+$mi_session = new Session();
 
-if (isset($_SESSION['usuario'])) {
-	display('messages/001.txt');
+//mensaje de si ya se encuentra logueado
+if ($mi_session->login_username() != '') {
+	
+	html_display('messages/001.txt', 'USER', $mi_session->login_username());
 }
+
 else {
 	if (isset($_POST["usuario"])) {
-		$mi_session = new Session();
 		$band = $mi_session->login($_POST["usuario"], $_POST["password"]);
 		if ($band) {
-			display('messages/003.txt');
+			html_display('messages/003.txt');
 		}
 		else {
-			display('messages/004.txt'); //despues pongo un msj
+			html_display('messages/004.txt'); //despues pongo un msj
 		}
 		
 	}
 	else {
-		display('users/login.txt');
+		html_display('users/login.txt');
 	}
 }
 
 
-draw_footer();
+html_display('footer.txt');
 ?>

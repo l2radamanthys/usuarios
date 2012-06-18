@@ -131,6 +131,7 @@ p, a {
 
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    border-radius: 5px;
     behavior:url(border-radius.htc);
 
     padding-top: 0px;
@@ -316,7 +317,17 @@ ul#menu-horizontal li:hover ul{
 
 .tbl-list {
 	border-collapse: collapse;
+	margin: 0px auto;
 }
+
+
+.tbl-list caption {
+	background-color: #EAEAEA;
+	color: #484848;
+	font-size: 20px;
+	font-weight: 100;
+}
+
 
 .tbl-list th {
 	background-color: #1E1E1E;

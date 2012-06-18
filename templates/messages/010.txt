@@ -1,0 +1,10 @@
+<br /><br /><br /><br />
+<div class="msj-alert-window">
+	<h2>Alert</h2>
+		
+	<p><strong>Error:</strong> No tienes permiso para acceder a esta area, ante cualquier duda contacta al administrador del sistema.</p>
+		
+	<div>
+		 <a href="javascript:history.back(1)">Volver Atrás</a>
+	</div>
+</div>
