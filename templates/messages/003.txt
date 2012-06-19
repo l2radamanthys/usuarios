@@ -1,8 +1,10 @@
 <br /><br /><br />
-<div align="center">
-	<div class="msj-ok">
-		<p>Login Correcto...</p>
+<div class="msj-ok-window">
+	<h2>Ok</h2>
+		
+	<p>Login Correcto...</p>
+		
+	<div>
+		 <a href="panel.php">Acceder al Panel <img src="images/arrow_right_icon.png" align="top"></a>
 	</div>
-	<br />
-	<a href="panel.php" class="boton">Acceder al Panel <img src="images/arrow_right_icon.png" align="top"></a>
 </div>

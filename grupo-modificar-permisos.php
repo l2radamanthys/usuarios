@@ -35,8 +35,10 @@ if ($user->is_have_access()) {
 	elseif ($_POST['query'] == 'group') {
 		html_display('users/edit-app-group-tbl-header-02.txt');
 
+		$group_id = $_POST['group_id'];
+
 		$conn = db_connect();
-		$query = "SELECT * FROM Applications AS App WHERE EXISTS (SELECT * FROM AppGroups WHERE AppGroups.Applications_id = App.id AND AppGroups.id = "."1".")";
+		$query = "SELECT * FROM Applications AS App WHERE EXISTS (SELECT * FROM AppGroups WHERE AppGroups.Applications_id = App.id AND AppGroups.id = ".$group_id.")";
 		$result = mysql_query($query, $conn) or die("<p style='color:#F00;'>Error ".$query." <br/><br/> MySQL dice: ".mysql_error()."</p>");
 	
 		while ($reg = mysql_fetch_assoc($result)) {
@@ -46,7 +48,7 @@ if ($user->is_have_access()) {
 			tend('tr');
 		}
 
-		$query = "SELECT * FROM Applications AS App WHERE NOT EXISTS (SELECT * FROM AppGroups WHERE AppGroups.Applications_id = App.id AND AppGroups.id = "."1".")";
+		$query = "SELECT * FROM Applications AS App WHERE NOT EXISTS (SELECT * FROM AppGroups WHERE AppGroups.Applications_id = App.id AND AppGroups.id = ".$group_id.")";
 		$result = mysql_query($query, $conn) or die("<p style='color:#F00;'>Error ".$query." <br/><br/> MySQL dice: ".mysql_error()."</p>");
 	
 		while ($reg = mysql_fetch_assoc($result)) {

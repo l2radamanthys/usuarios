@@ -1,8 +1,10 @@
 <br /><br /><br />
-<div align="center">
-	<div class="msj-ok">
-		<p>Has Cerrado Session, Hasta Luego..</p>
+<div class="msj-ok-window">
+	<h2>Ok</h2>
+		
+	<p>Has Cerrado Session con exito, Hasta Luego..</p>
+		
+	<div>
+		 <a href="login.php"><img src="images/arrow_left_icon.png" align="top">&nbsp;Atras</a>
 	</div>
-	<br />
-	<a href="login.php" class="boton"><img src="images/arrow_left_icon.png" align="top">&nbsp;Atras</a>
 </div>

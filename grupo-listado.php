@@ -5,27 +5,26 @@ include_once('libs/urls.php');
 include_once('libs/config.php');
 include_once('libs/template-manager.php');
 
+include_once('libs/users.php');
 include_once('libs/groups.php');
 
 
+$user = new Session();
 html_display('header.txt', 'TITLE', 'Listado de Grupos');
-
 html_format('Usuarios - Grupos', 'h1', 'style="margin-bottom: 10px"'); //titulo
-display_menu();  //dibujar menu
-
+display_menu($user);  //dibujar menu
 tbr(2);
 
-$group = new Groups();
-$result = $group->all();
+if ($user->is_have_access()) {
+	$group = new Groups();
+	$result = $group->all();
+	$labels = array('id'=>'Id', 'name' => 'Nombre');
+	html_display_sql($result, $labels, 'Listado de Grupos', 'tbl-list', '', 'style="width: 400px;"');
+}
 
-
-$labels = array(
-	'id'=>'Id',
-	'name' => 'Nombre'
-);
-
-html_display_sql($result, $labels, 'Listado de Grupos', 'tbl-list', '', 'style="width: 400px;"');
-
+else {
+	html_display('messages/010.txt');
+}
 
 html_display('footer.txt');
 ?>

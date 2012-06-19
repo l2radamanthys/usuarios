@@ -11,9 +11,10 @@
  */ 
 
 $DEBUG = True;  //muestra los mensajes para de debug
-
+$SUSER = False; //super usuario activo
 
 class Session {
+	
 	
 	/* Funcion que loguea un usuario en caso de no estar logueado
      *
@@ -89,7 +90,6 @@ class Session {
         if ($app_code == 'NO_CODE') {
 			if ($DEBUG) {
 				echo '<p style="color: #D94600">ALERTA: ESTA PAGINA NO TIENE PERMISOS ASIGNADO</p>';
-				echo '<p style="color: #D94600">CODIGO APLICACION: '.$app_code.'</p>';
 			}
             return 0;
         }
@@ -106,17 +106,22 @@ class Session {
 				$conn = db_connect();
 				$result = mysql_query($query, $conn) or die("Error ".$query." <br/><br/> MySQL dice: ".mysql_error());
 				$count = mysql_num_rows($result); //mysql_result($result, 0); 
-				if ($count == 1) {
+				if ($count >= 1) {
 					return 1;
 				}
 				else {
+					if ($DEBUG) {
+						echo '<p style="color: #D94600">CODIGO APLICACION: '.$app_code.'</p>';
+						echo '<p style="color: #D94600">CODIGO SALIDA: 2 - NO TIENE PERMISOS</p>';
+					}
 					return 2;
 				}
 			}
 			else {
 				if ($DEBUG) {
-					echo '<p style="color: #D94600">USUARIO: '.$username.'</p>';
+					echo '<p style="color: #D94600">USUARIO: ['.$username.']</p>';
 					echo '<p style="color: #D94600">CODIGO APLICACION: '.$app_code.'</p>';
+					echo '<p style="color: #D94600">CODIGO SALIDA: 3 - NO LOGUEADO</p>';
 				}
 				return 3;
 			}	
@@ -131,6 +136,10 @@ class Session {
 	 * o no al sitio.
 	 */ 
 	function is_have_access() {
+		global $SUSER;
+		if ($SUSER) { //desactiva la aplicacion de permisos
+			return True;
+		}
 		$app_code = get_path_code($_SERVER['SCRIPT_NAME']);
 		if ($this->validate_access($app_code) < 2) {
 			return True;
@@ -140,11 +149,11 @@ class Session {
 		}
 	}
 	
-	
+	/*
+     * Desconectar al usuario y borra los datos de la session
+     */
 	function logout() {
-		/*
-        desconectar borra los datos de la session
-        */
+		
         session_unset();
         $_SESSION = array();
         session_destroy();
