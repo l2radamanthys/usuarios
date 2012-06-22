@@ -11,32 +11,35 @@
 /*
  * Listado de urls y permisos requeridos 
  */
+ 
+ $URL_PAHT = '/proyectos/Publicaciones';
+ 
 $URLS = array(
     //'URL' => 'URL_CODE',
     
-    '/usuarios/panel.php' => 'LOGIN', /**/
+    $URL_PAHT.'/usuarios/panel.php' => 'LOGIN', /**/
     
     /** Permisos para Usuarios **/
-    '/usuarios/usuario-agregar.php' => 'USER_ADD',
-    '/usuarios/usuario-listado.php' => 'USER_LIST',
-    '/usuarios/usuario-borrar.php' => 'USER_DEL',
-    '/usuarios/usuario-modificar.php' => 'USER_EDIT',
-    '/usuarios/mostrar-mis-datos.php' => 'USER_MI_INFO',
+    $URL_PAHT.'/usuarios/usuario-agregar.php' => 'USER_ADD',
+    $URL_PAHT.'/usuarios/usuario-listado.php' => 'USER_LIST',
+    $URL_PAHT.'/usuarios/usuario-borrar.php' => 'USER_DEL',
+    $URL_PAHT.'/usuarios/usuario-modificar.php' => 'USER_EDIT',
+    $URL_PAHT.'/usuarios/mostrar-mis-datos.php' => 'USER_MI_INFO',
     
     
     /** Permisos para Aplicaciones **/
-    '/usuarios/applicaciones-agregar.php' => 'APP_ADD',
-    '/usuarios/applicaciones-listado.php' => 'APP_LIST',
-    '/usuarios/applicaciones-modificar.php' => 'APP_EDIT',
-    '/usuarios/applicaciones-borrar.php' => 'APP_DEL',
+    $URL_PAHT.'/usuarios/applicaciones-agregar.php' => 'APP_ADD',
+    $URL_PAHT.'/usuarios/applicaciones-listado.php' => 'APP_LIST',
+    $URL_PAHT.'/usuarios/applicaciones-modificar.php' => 'APP_EDIT',
+    $URL_PAHT.'/usuarios/applicaciones-borrar.php' => 'APP_DEL',
     
     /** Permisos para Grupos **/
-    '/usuarios/grupo-agregar.php' => 'GROUP_ADD',
-    '/usuarios/grupo-listado.php' => 'GROUP_LIST',
-    '/usuarios/grupo-modificar-permisos.php' => 'GROUP_APP_EDT',
+    $URL_PAHT.'/usuarios/grupo-agregar.php' => 'GROUP_ADD',
+    $URL_PAHT.'/usuarios/grupo-listado.php' => 'GROUP_LIST',
+    $URL_PAHT.'/usuarios/grupo-modificar-permisos.php' => 'GROUP_APP_EDT',
     
     
-    '/usuarios/test-access.php' => 'USER_TEST',   /*para prueba de acceso*/
+    $URL_PAHT.'/usuarios/test-access.php' => 'USER_TEST',   /*para prueba de acceso*/
     
 );
 

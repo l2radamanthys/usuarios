@@ -1,0 +1,67 @@
+
+<div class="window" style="width: 400px; margin:0px auto;">
+<h3>Instalacion</h3>
+<form  action="" method="POST">
+<table  border="0px" style="margin:0px auto;" width="350px">
+
+<tr>
+	<td colspan="2">
+		<p style="color: #D74600;">1 - Selecione la base de datos donde se instalara (debe estar previamente creada): </p>
+		<br />
+	</td>
+</tr>
+<tr>
+	<td><label>Nombre de Base de Datos:</label></td>
+	<td><input type="text" name="db_name"></td>
+</tr>
+
+<tr>
+	<td colspan="2">
+		<br />
+		<p style="color: #D74600;">2- Cuenta del Administrador, es la cuenta con la que normalmente se administraran los permisos: </p>
+		<br />
+	</td>
+</tr>
+
+<tr>
+	<td><label>Cuenta del Administrador:</label></td>
+	<td><input type="text" name="adm_user" value="admin"></td>
+</tr>
+
+<tr>
+	<td><label>Contraseña del Administrador:</label></td>
+	<td><input type="password" name="adm_pswr"></td>
+</tr>
+
+
+<tr>
+	<td colspan="2">
+		<br />
+		<p style="color: #D74600;">3- Datos por defecto, por defecto creara los grupos de usuarios, Administrador y Usuarios, en caso de no requerir
+		la creacion del Grupo de usuarios desselecione el siguiente iten</p>
+		<br />
+	</td>
+</tr>
+
+<tr>
+	<td><label>Insertar datos por defecto:</label></td>
+	<td><input type="checkbox" name="defecto" checked></td>
+</tr>
+
+<tr>
+	<td colspan="2">
+		<br />
+		<p style="color: #D74600;">4- Para continuar presione el boton instalar..</p>
+		<br />
+	</td>
+</tr>
+
+<tr>
+	<td colspan="2" align="center">
+		<input type="submit" value="Instalar" class="boton"/>
+
+	</td>
+</tr>
+</table>
+</form>
+</div>

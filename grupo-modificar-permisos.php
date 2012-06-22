@@ -36,7 +36,7 @@ if ($user->is_have_access()) {
 		html_display('users/edit-app-group-tbl-header-02.txt');
 
 		$group_id = $_POST['group_id'];
-
+		//echo "Grupo ID: ".$_POST['group_id'];
 		$conn = db_connect();
 		$query = "SELECT * FROM Applications AS App WHERE EXISTS (SELECT * FROM AppGroups WHERE AppGroups.Applications_id = App.id AND AppGroups.id = ".$group_id.")";
 		$result = mysql_query($query, $conn) or die("<p style='color:#F00;'>Error ".$query." <br/><br/> MySQL dice: ".mysql_error()."</p>");
@@ -57,11 +57,12 @@ if ($user->is_have_access()) {
 			html_format('<label>'.$reg['name'].'</label>', 'td');
 			tend('tr');
 		}
-		html_display('users/edit-app-group-tbl-footer-02.txt', array('id' => $_POST['group_id']));
+		html_display('users/edit-app-group-tbl-footer-02.txt','id', $_POST['group_id']);
 	}
 
 	//selecionado el grupo se selecionaron permisso
 	elseif ($_POST['query'] == 'application') {
+		//echo "Grupo ID: ".$_POST['group_id'];
 		$app_group = new AppForGroup();
 		$list = "(";
 		foreach($_POST as $key => $value) {
@@ -71,7 +72,7 @@ if ($user->is_have_access()) {
 			}
 		}
 		$list .= "0)";
-		$app_group->delete_($list);
+		$app_group->delete_($list, $_POST['group_id']);
 		html_display('messages/009.txt');
 	}
 }

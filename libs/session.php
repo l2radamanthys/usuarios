@@ -11,7 +11,7 @@
  */ 
 
 $DEBUG = True;  //muestra los mensajes para de debug
-$SUSER = False; //super usuario activo
+$SUSER = True; //super usuario activo
 
 class Session {
 	
