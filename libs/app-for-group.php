@@ -9,10 +9,10 @@ class AppForGroup {
 	}
 	
 	
-	function exist($id) {
-		$query = "SELECT COUNT(*) FROM AplicationsForGroups WHERE id=".$id;
+	function exist($app_id, $group_id) {
+		$query = "SELECT * FROM AplicationsForGroups WHERE Applications_id=".$app_id." AND Groups_id=".$group_id;
 		$result = mysql_query($query, $this->conn) or die("Error ".$query." <br/><br/> MySQL dice: ".mysql_error());
-        $count = mysql_result($result, 0); 
+        $count = mysql_num_rows($result); 
         if ($count == 1) {
             return True;
         }
@@ -23,7 +23,7 @@ class AppForGroup {
 	
 	
 	function add($app_id, $group_id) {
-		if (!$this->exist($app_id)) {
+		if (!$this->exist($app_id, $group_id)) {
 			$query = "INSERT INTO AplicationsForGroups (`id`,`Applications_id`,`Groups_id`) VALUES (NULL ,".$app_id." ,".$group_id.")";
 			mysql_query($query, $this->conn) or die("Error ".$query." <br /><br /> MySQL dice: ".mysql_error());
 			return True;
