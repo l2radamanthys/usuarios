@@ -6,8 +6,6 @@ include_once('libs/template-manager.php');
 
 
 html_display('header.txt', 'TITLE', 'Page Title');
-
-html_format('Page Title', 'h1', 'style="margin-bottom: 10px"'); //titulo
 html_display('users/menu.txt'); //dibujar menu
 
 

@@ -11,7 +11,6 @@ include_once('libs/applications.php');
 
 $user = new Session();
 html_display('header.txt', 'TITLE', 'Listado de Aplicaciones');
-html_format("Usuarios - Aplicaciones", "h1", 'style="margin-bottom: 10px"'); //titulo
 display_menu($user);  //dibujar menu
 tbr(2);
 
@@ -25,7 +24,7 @@ if ($user->is_have_access()) {
 		'name' => 'Nombre',
 		'descripcion' => 'Descripcion'
 	);
-	html_display_sql($result, $labels, 'Listado de Aplicaciones', 'tbl-list', '', 'style="width: 680px;"');
+	html_display_sql($result, $labels, 'Listado de Aplicaciones', 'tbl-list', '', 'style="width: 900px;"');
 }
 
 else {

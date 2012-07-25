@@ -12,7 +12,8 @@
  * Listado de urls y permisos requeridos 
  */
  
- $URL_PAHT = '/proyectos/Publicaciones';
+ $URL_PAHT = '/proyectos/Tutos';
+ $URL_DEBUG = True;
  
 $URLS = array(
     //'URL' => 'URL_CODE',
@@ -49,7 +50,10 @@ $APP_PATH = "/usuarios/";
 
 
 function get_path_code($url) {
-    global $URLS;
+    global $URLS, $URL_DEBUG;
+    if ($URL_DEBUG) {
+		echo '<p style="color: #D94600">URL APLICACION: '.$url.'</p>';
+	}
     if(isset($URLS[$url])) {
         return $URLS[$url];
     }

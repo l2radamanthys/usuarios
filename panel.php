@@ -9,9 +9,7 @@ include_once('libs/users.php');
 
 $user = new Session();
 html_display('header.txt', 'TITLE', 'Panel de Control');
-html_format('Usuarios - Panel Control', 'h1', 'style="margin-bottom: 10px"'); //titulo
 display_menu($user); 
-tbr(2);
 
 if ($user->is_have_access()) {
 

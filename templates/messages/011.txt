@@ -1,0 +1,10 @@
+<br /><br /><br /><br />
+<div class="msj-alert-window">
+	<h2>Alerta</h2>
+		
+	<p><strong>Error:</strong>La Cuenta de usuario no se encuentra Activada.</p>
+		
+	<div>
+		 <a href="javascript:history.back(1)">Volver Atrás</a>
+	</div>
+</div>

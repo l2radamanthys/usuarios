@@ -11,7 +11,6 @@ include_once('libs/users.php');
 
 $user = new Session();
 html_display('header.txt', 'TITLE', 'Mis Datos');
-html_format("Usuarios - Mis Datos", "h1", 'style="margin-bottom: 10px"'); //titulo
 display_menu($user);  //dibujar menu
 tbr(2);
 

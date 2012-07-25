@@ -11,7 +11,7 @@ include_once('libs/applications.php');
 
 $user = new Session();
 html_display('header.txt', 'TITLE', 'Agregar Aplicacion');
-html_format('Usuarios - Aplicaciones', 'h1', 'style="margin-bottom: 10px"'); //titulo
+//html_format('Usuarios - Aplicaciones', 'h1', 'style="margin-bottom: 10px"'); //titulo
 display_menu($user);  //dibujar menu
 
 //echo $_SERVER['SCRIPT_NAME'];

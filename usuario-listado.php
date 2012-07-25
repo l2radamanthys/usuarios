@@ -9,7 +9,6 @@ include_once('libs/users.php');
 
 $user = new Session();
 html_display('header.txt', 'TITLE', 'Listado de Usuarios');
-html_format('Usuarios - Users', 'h1', 'style="margin-bottom: 10px"'); //titulo
 display_menu($user);  //dibujar menu
 tbr(2);
 

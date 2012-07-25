@@ -10,7 +10,7 @@
 $HOST = "127.0.0.1"; /* direcion del servidor */
 $USER = "root"; /* nombre de usuario */
 $PSWD = ""; /* Contraseña del usuario */
-$NAME = "compu";  /* Nombre de la Base de Datos a usar */
+$NAME = "usuarios";  /* Nombre de la Base de Datos a usar */
 
 
  

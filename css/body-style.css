@@ -1,0 +1,251 @@
+body {
+	font-family: Verdana, Arial, Geneva;
+	background-color: #D3D3D3;
+}
+
+
+
+
+a {
+	text-decoration: None;
+	color: #00509F;
+}
+
+a:hover {
+	color: #FB5200;
+}
+
+p, a {
+	font-size: 12px;
+}
+
+
+.content {
+	background-color: #FFF;
+	margin: 0 auto;
+	width: 1000px;
+
+	background-color: #FFF;
+	font-size: 12px;
+	text-align: left;
+	min-height: 500px;
+	margin-top: 10px;
+	padding: 15px;
+	
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    behavior: url(border-radius.htc);
+}
+
+
+.content h1 {
+	background-color: #AAE3FF;
+	color: #2A2A2A;
+	font-size: 28px;
+	font-weight: 100;
+	
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	
+	border-bottom: 2px solid #3C3C3C;
+}
+
+.content h2 {
+	background-color: #EAEAEA;
+	color: #484848;
+	font-size: 20px;
+	font-weight: 100;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.content label {
+	font-size: 12px;
+	font-weight: 100;
+}
+
+.content p {
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+
+
+
+
+/******************** Formulario *********************/
+
+.edt, .edt_c, .edt_m, .edt_g, .edt_mc {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #AEAEAE;
+	font-size: 12px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin: 2px 5px 2px 5px;
+	
+
+}
+
+.edt_mc {
+	width: 100px;
+}
+
+.edt_c {
+	width: 150px;
+}
+
+.edt_m {
+	width: 250px;
+}
+
+.form {
+	background-color: #D0CCD2;
+	padding: 30px 10px 30px 10px;
+	width: 600px;
+
+}
+
+
+/******************** Ventana *********************/
+.window {
+    font-family: Verdana;
+    font-size: 12px;
+    background-color: #E1E1E1;
+    border: 1px solid #C5C5C5;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    behavior:url(border-radius.htc);
+
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+
+    display: block;
+}
+
+.window h3 {
+	background-color: #1D1D1D;
+	color: #FFF;
+	
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	
+	margin: 0px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.window label {
+    font-size: 11px;
+    text-align: left; 
+    margin: 10px;
+}
+.field input {
+	margin:5px;
+}
+
+/******************* estilo Boton *****************/
+.boton{
+    background-image: url('../images/botom_a.png');
+    color: #333;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    text-decoration: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #AAA;
+
+    -webkit-text-shadow: 1px 1px 5px #858585;
+    -moz-text-shadow: 1px 1px 5px #858585;
+    text-shadow: 1px 1px 5px #858585;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    -webkit-box-shadow: 1px 1px 5px #858585;
+    -moz-box-shadow: 1px 1px 5px #858585;
+    box-shadow: 1px 1px 5px #858585;
+
+}
+
+.boton:hover {
+   background-image: url('../images/botom_h.png');
+
+    -webkit-box-shadow: -1px -1px 5px #858585;
+    -moz-box-shadow: -1px -1px 5px #858585;
+    box-shadow: -1px -1px 5px #858585;
+}
+
+.boton img{
+    margin: 0px;
+}
+
+
+/**************************************************/
+
+.tbl-list {
+	border-collapse: collapse;
+	margin: 0px auto;
+}
+
+
+.tbl-list caption {
+	background-color: #EAEAEA;
+	color: #484848;
+	font-size: 20px;
+	font-weight: 100;
+}
+
+
+.tbl-list th {
+	background-color: #1E1E1E;
+	color: #EBEBEB;
+	font-size: 13px;
+	text-align:left;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	padding-left: 6px;
+	font-weight: bold;
+	border:1px solid #757575;
+}
+
+.tbl-list .tbl-iten {
+	background-color: #005F8C;
+	color: #EBEBEB;
+	font-size: 13px;
+	text-align:left;
+	padding-top:5px;
+	padding-bottom:4px;
+	padding-left: 6px;
+	font-weight: bold;
+	border:1px solid #757575;
+}
+
+.tbl-list td {
+	padding:2px 7px 1px 7px;
+	border:1px solid #757575;
+	background-color: #FFFFD9;
+	font-size: 11px;
+}
+

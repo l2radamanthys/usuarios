@@ -75,3 +75,10 @@ CREATE  TABLE IF NOT EXISTS `LogEntrys` (
 	CONSTRAINT `fk_LogEntrys_Applications` FOREIGN KEY (`Applications_id`)
     REFERENCES `Applications` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- View AppGroups
+-- -----------------------------------------------------
+CREATE VIEW `AppGroups` AS SELECT `groups`.`id` AS `id`,`groups`.`name` AS `name`,`appgroup`.`Applications_id` AS `Applications_id` FROM 
+(`groups` JOIN `aplicationsforgroups` `appgroup` ON `groups`.`id` = `appgroup`.`Groups_id`);

@@ -22,6 +22,5 @@ INSERT INTO `Groups` (`id`, `name`) VALUES
 
 INSERT INTO `Users` (`username`, `password`, `first_name`, `last_name`, `is_active`, `email`, `Groups_id`) VALUES
 	('admin', '123456', 'Admin', 'Sistema', 1, 'adm@site.com', 1),
-	('wyrven', '123456', 'Ricardo Daniel', 'Quiroga', 0, 'l2radamanthys@gmail.com', 2),
-	('test', '12345', 'Usuario de ', 'Prueba', 0, 'usernet@dot.cm', 2);
+	('wyrven', '123456', 'Ricardo Daniel', 'Quiroga', 0, 'l2radamanthys@gmail.com', 2);
 

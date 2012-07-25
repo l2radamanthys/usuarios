@@ -16,8 +16,8 @@ class Groups {
 	 * 
 	 * @return boolean 
 	 */ 
-	function exist($code) {
-		$query = "SELECT COUNT(*) FROM Applications WHERE code='".$code."'";
+	function exist($name) {
+		$query = "SELECT * FROM Groups WHERE name='".$name."'";
 		$result = mysql_query($query, $this->conn) or die("<p style='color:#F00;'>Error ".$query." <br/><br/> MySQL dice: ".mysql_error()."</p>");	
         $count = mysql_num_rows($result);
         if ($count >= 1) {

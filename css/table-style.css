@@ -36,14 +36,18 @@
 	background-color: #F7F5EA;
 }
 
+/*
 .table tr:hover{
 	background-color: #00FF40;
 }
+*/
 
 .table-alter {
 	background-color: #FAF8B8 !important;
 }
 
+/*
 .table-alter:hover {
 	background-color: #00FF40 !important;
 }
+*/

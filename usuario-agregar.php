@@ -11,7 +11,6 @@ include_once('libs/groups.php');
 
 $user = new Session();
 html_display('header.txt', 'TITLE', 'Agregar Usuario');
-html_format("Usuarios", "h1", 'style="margin-bottom: 10px"'); //titulo
 display_menu($user);  //dibujar menu
 
 
@@ -29,8 +28,11 @@ if ($user->is_have_access()) {
 	
 	
 	if (isset($_POST['username'])) {
+		
+		print_r($_POST);
+		
 		$user = new Users();
-		$user->add($_POST['username'], $_POST['password1'], $_POST['first-name'], $_POST['last-name'], $_POST['email'], $_POST['group_id'], 0);
+		$user->add($_POST['username'], $_POST['password1'], $_POST['email'], $_POST['group_id'], 0);
 		
 		html_display('messages/005.txt', array('key'=>'Usuario', 'name'=>$_POST['username']));
 	}

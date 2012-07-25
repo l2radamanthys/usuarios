@@ -39,6 +39,11 @@ class Session {
             $pswd = mysql_real_escape_string($pswd); 
             
             $conn = db_connect();
+            if(!$this->is_active($user)) {
+				return 2;
+			}
+            
+            
             $query = "SELECT * FROM Users WHERE username='$user' AND password='$pswd'";
             $result = mysql_query($query, $conn);
             $count = mysql_num_rows($result);
@@ -149,13 +154,29 @@ class Session {
 		}
 	}
 	
+	
+	function is_active($username) {
+		$conn = db_connect();
+		$query = "SELECT * FROM Users WHERE username='".$username."' AND is_active=1;";
+		$result = mysql_query($query, $conn) or die("Error ".$query." <br/><br/> MySQL dice: ".mysql_error());
+		$count = mysql_num_rows($result);
+		if ($count >= 1) {
+			return True;
+		}
+		else {
+			return False;
+		}
+		
+	} 
+	
+	
 	/*
      * Desconectar al usuario y borra los datos de la session
      */
 	function logout() {
-		
         session_unset();
         $_SESSION = array();
         session_destroy();
     }
 }
+

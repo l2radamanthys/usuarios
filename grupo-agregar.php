@@ -11,7 +11,6 @@ include_once('libs/groups.php');
 
 $user = new Session();
 html_display('header.txt', 'TITLE', 'Agregar Grupo');
-html_format("Usuarios - Grupos", "h1", 'style="margin-bottom: 10px"'); //titulo
 display_menu($user); //dibujar menu
 
 if ($user->is_have_access()) {

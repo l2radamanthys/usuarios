@@ -1,43 +1,46 @@
-<div class="menu-cont">
-<ul id="menu-horizontal"> 
-	<li>Usuarios
-		<ul>
-		<li><a href="usuario-agregar.php">Agregar</a></li>
-		<li><a href="usuario-listado.php">Listado</a></li>
-		<li><a href="usuario-modificar.php">Modificar</a></li>
-		<li><a href="usuario-borrar.php">Borrar</a></li>
-		</ul>
-	</li>
-	
-	<li>Grupos
-		<ul>
-		<li><a href="grupo-agregar.php">Agregar</a></li>
-		<li><a href="grupo-listado.php">Listado</a></li>
-		<li><a href="grupo-modificar-permisos.php">Modificar Permisos</a></li>
-		<li><a href="grupo-borrar.php">Borrar</a></li>
-		</ul>
-	</li>
-	
-	<li>Permisos
-		<ul>
-		<li><a href="applicaciones-agregar.php">Agregar</a></li>
-		<li><a href="applicaciones-listado.php">Listado</a></li>
-		<li><a href="applicaciones-modificar.php">Modificar</a></li>
-		<li><a href="applicaciones-borrar.php">Borrar</a></li>
-		</ul>
-	</li>
-	
-	<li>Cuenta
-		<ul>
-		<li><a href="panel.php">Panel de Usuario</a></li>
-		<li><a href="mostrar-mis-datos.php">Mis Datos</a></li>
-		<!-- <li><a href="modificar-mis-datos.php">Modificar Datos</a></li>  -->
-		<li><a href="login.php">Login</a></li>
-		<li><a href="logout.php">Logout</a></li>
-		<li><a href="page.php">Page</a></li>
-		</ul>
-	</li>
-	
-</ul>
 </div>
-<br /><br />
+<div class="menu-cont">
+	<div class="menu">
+		<ul>
+			<li><label>Usuarios</label>
+				<ul>
+				<li><a href="usuario-agregar.php">Agregar</a></li>
+				<li><a href="usuario-listado.php">Listado</a></li>
+				<li><a href="usuario-modificar.php">Modificar</a></li>
+				<li><a href="usuario-borrar.php">Borrar</a></li>
+				</ul>
+			</li>
+			
+			<li><label>Grupos</label>
+				<ul>
+				<li><a href="grupo-agregar.php">Agregar</a></li>
+				<li><a href="grupo-listado.php">Listado</a></li>
+				<li><a href="grupo-modificar-permisos.php">Modificar Permisos</a></li>
+				<li><a href="grupo-borrar.php">Borrar</a></li>
+				</ul>
+			</li>
+			
+			<li><label>Permisos</label>
+				<ul>
+				<li><a href="applicaciones-agregar.php">Agregar</a></li>
+				<li><a href="applicaciones-listado.php">Listado</a></li>
+				<li><a href="applicaciones-modificar.php">Modificar</a></li>
+				<li><a href="applicaciones-borrar.php">Borrar</a></li>
+				</ul>
+			</li>
+			
+			<li><label>Cuenta</label>
+				<ul>
+				<li><a href="panel.php">Panel de Usuario</a></li>
+				<li><a href="mostrar-mis-datos.php">Mis Datos</a></li>
+				<!-- <li><a href="modificar-mis-datos.php">Modificar Datos</a></li>  -->
+				<li><a href="login.php">Login</a></li>
+				<li><a href="logout.php">Logout</a></li>
+				<li><a href="page.php">Page</a></li>
+				</ul>
+			</li>
+		</ul>	
+		<div style="clear:both;"></div>
+	</div>
+</div>
+<div class="content">

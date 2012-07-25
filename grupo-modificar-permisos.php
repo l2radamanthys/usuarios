@@ -13,7 +13,7 @@ include_once('libs/app-for-group.php');
 
 $user = new Session();
 html_display('header.txt', 'TITLE', 'Modificar Permisos Grupo');
-html_format("Usuarios - Grupos", "h1", 'style="margin-bottom: 10px"'); //titulo
+//html_format("Usuarios - Grupos", "h1", 'style="margin-bottom: 10px"'); //titulo
 display_menu($user);  //dibujar menu
 
 
